@@ -20,7 +20,7 @@ TARGET_BOOTLOADER_BOARD_NAME := alel04
 BOARD_KERNEL_CMDLINE := androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_PAGESIZE := 2048
-TARGET_KERNEL_CONFIG := alel04_defconfig
+TARGET_KERNEL_CONFIG := msm8610_defconfig
 TARGET_KERNEL_SOURCE := kernel/huawei/alel04
 # TARGET_PREBUILT_KERNEL := device/huawei/alel04/kernel
 
