@@ -7,7 +7,7 @@ $(call inherit-product-if-exists, vendor/huawei/alel04/alel04-vendor.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/huawei/alel04/overlay
 
-
+LOCAL_PATH := device/huawei/alel04
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 	LOCAL_KERNEL := device/huawei/alel04/kernel
 else
