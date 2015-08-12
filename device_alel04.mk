@@ -15,8 +15,6 @@ else
 endif
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/recovery/etc/fstab.qcom:recovery/root/fstab.qcom \
-    $(LOCAL_PATH)/recovery/etc/init.recovery.qcom.rc:root/init.recovery.qcom.rc \
     $(LOCAL_PATH)/kernel:kernel
 
 $(call inherit-product, build/target/product/full.mk)
