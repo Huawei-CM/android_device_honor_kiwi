@@ -21,7 +21,7 @@ BOARD_KERNEL_CMDLINE := androidboot.console=ttyHSL0 androidboot.hardware=qcom us
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_PAGESIZE := 2048
 TARGET_KERNEL_CONFIG := msm8610_defconfig
-TARGET_KERNEL_SOURCE := kernel/huawei/alel04
+TARGET_KERNEL_SOURCE := kernel/huawei/msm8610
 # TARGET_PREBUILT_KERNEL := device/huawei/alel04/kernel
 
 
