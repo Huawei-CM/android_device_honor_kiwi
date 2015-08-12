@@ -16,7 +16,12 @@ endif
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/kernel:kernel
-    $(LOCAL_PATH)/recovery/etc/fstab.qcom:recovery/root/fstab.qcom 
+    $(LOCAL_PATH)/recovery/etc/fstab.qcom:recovery/root/fstab.qcom
+
+# Off-mode charging
+PRODUCT_PACKAGES += \
+    charge \
+    offmode_charging_res_images
 
 $(call inherit-product, build/target/product/full.mk)
 
