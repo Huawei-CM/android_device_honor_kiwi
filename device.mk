@@ -16,7 +16,10 @@ endif
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/kernel:kernel
-    $(LOCAL_PATH)/recovery/etc/fstab.qcom:recovery/root/fstab.qcom
+    $(LOCAL_PATH)/recovery/etc/fstab.qcom:recovery/root/fstab.qcom \
+    $(LOCAL_PATH)/recovery/etc/init.recovery.qcom.rc:root/init.recovery.qcom.rc \
+    $(LOCAL_PATH)/recovery/etc/init.qti.carrier.rc:root/init.qti.carrier.rc \
+    $(LOCAL_PATH)/recovery/etc/init.target.rc:root/init.target.rc \
 
 # Off-mode charging
 PRODUCT_PACKAGES += \
