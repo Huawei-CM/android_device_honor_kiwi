@@ -14,8 +14,8 @@ $(call inherit-product, device/huawei/alel04/device.mk)
 PRODUCT_DEVICE := alel04
 PRODUCT_NAME := cm_alel04
 PRODUCT_BRAND := huawei
-PRODUCT_MODEL := alel04
-PRODUCT_MANUFACTURER := huawei
+PRODUCT_MODEL := P8 Lite
+PRODUCT_MANUFACTURER := Huawei
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=ALEL04
