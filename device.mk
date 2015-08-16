@@ -1,18 +1,24 @@
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+#
+# Copyright (C) 2015 The CyanogenMod Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
 
-# The gps config appropriate for this device
-$(call inherit-product, device/common/gps/gps_us_supl.mk)
-
-$(call inherit-product-if-exists, vendor/huawei/alel04/alel04-vendor.mk)
-
-DEVICE_PACKAGE_OVERLAYS += device/huawei/alel04/overlay
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 LOCAL_PATH := device/huawei/alel04
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-	LOCAL_KERNEL := device/huawei/alel04/kernel
-else
-	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
+
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH))/overlay
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/kernel:kernel \
@@ -26,8 +32,15 @@ PRODUCT_PACKAGES += \
     charge \
     offmode_charging_res_images
 
-$(call inherit-product, build/target/product/full.mk)
+$(call inherit-product-if-exists, vendor/huawei/alel04/alel04-vendor.mk)
+
+$(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
-PRODUCT_NAME := full_alel04
+
+# Discard inherited values and use our own instead.
 PRODUCT_DEVICE := alel04
+PRODUCT_NAME := cm_alel04
+PRODUCT_BRAND := huawei
+PRODUCT_MODEL := P8 Lite
+PRODUCT_MANUFACTURER := Huawei
