@@ -83,6 +83,14 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/etc/init.qti.carrier.rc:root/init.qti.carrier.rc \
     $(LOCAL_PATH)/recovery/etc/init.target.rc:root/init.target.rc
 
+# Graphics
+PRODUCT_PACKAGES += \
+	copybit.msm8610 \
+	gralloc.msm8610 \
+	hwcomposer.msm8610 \
+	libtinyxml \
+	memtrack.msm8610
+
 # Keylayout
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
