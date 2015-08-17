@@ -1,0 +1,3 @@
+add_lunch_combo cm_alel04-user
+add_lunch_combo cm_alel04-userdebug
+add_lunch_combo cm_alel04-eng
