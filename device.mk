@@ -96,10 +96,80 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
     $(LOCAL_PATH)/keylayout/synaptics_rmi4_i2c.kl:system/usr/keylayout/synaptics_rmi4_i2c.kl
 
+# Lights
+PRODUCT_PACKAGES += \
+    lights.msm8610
+
+# Keystore
+PRODUCT_PACKAGES += \
+    keystore.msm8610
+
+# Location
+PRODUCT_PACKAGES += \
+    gps.msm8610
+
+# OMX
+PRODUCT_PACKAGES += \
+    libOmxAacEnc \
+    libOmxAmrEnc \
+    libOmxCore \
+    libOmxEvrcEnc \
+    libOmxQcelp13Enc \
+    libOmxVdec \
+    libOmxVenc \
+    libdashplayer \
+    libstagefrighthw \
+    libmm-omxcore \
+    qcmediaplayer
+
+PRODUCT_BOOT_JARS += \
+    qcmediaplayer
+
+# Power
+PRODUCT_PACKAGES += \
+    power.msm8610
+
+# Radio
+PRODUCT_BOOT_JARS += \
+    qcrilhook
+
 # Off-mode charging
 PRODUCT_PACKAGES += \
     charge \
     offmode_charging_res_images
+
+# Thermal
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/thermal-engine.conf:system/etc/thermal-engine.conf
+
+PRODUCT_PACKAGES += \
+    dhcpcd.conf \
+    hostapd.conf \
+    wpa_supplicant_overlay.conf \
+    wpa_supplicant.conf \
+    p2p_supplicant_overlay.conf \
+    hostapd.accept \
+    hostapd.deny
+
+PRODUCT_PACKAGES += \
+    hostapd \
+    libQWiFiSoftApCfg \
+    libcurl \
+    libqsap_sdk \
+    libwpa_client \
+    wcnss_service \
+    wpa_supplicant
+
+# Wifi firmware symlinks
+PRODUCT_PACKAGES += \
+    WCNSS_qcom_wlan_nv.bin \
+    WCNSS_qcom_cfg.ini
+
+# Wifi firmware
+PRODUCT_COPY_FILES += \
+    kernel/huawei/msm8226/drivers/staging/prima/firmware_bin/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
+    kernel/huawei/msm8226/drivers/staging/prima/firmware_bin/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
+    kernel/huawei/msm8226/drivers/staging/prima/firmware_bin/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 
 $(call inherit-product-if-exists, vendor/huawei/alel04/alel04-vendor.mk)
 
