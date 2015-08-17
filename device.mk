@@ -18,6 +18,36 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 LOCAL_PATH := device/huawei/alel04
 
+PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
+PRODUCT_AAPT_PREF_CONFIG := xhdpi
+
+$(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
+
+# Boot animation
+TARGET_SCREEN_HEIGHT := 1280
+TARGET_SCREEN_WIDTH := 720
+
+# Audio
+    audio.a2dp.default \
+    audio.primary.msm8610 \
+    audio.r_submix.default \
+    audio.usb.default \
+    audio_policy.msm8610 \
+    audiod \
+    tinymix
+
+PRODUCT_PACKAGES += \
+    libaudio-resampler \
+    libaudioparameter \
+    libqcompostprocbundle \
+    libqcomvisualizer \
+    libqcomvoiceprocessing
+
+# Audio configuration
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf \
+    $(LOCAL_PATH)/audio/mixer_paths.xml:system/etc/mixer_paths.xml
+
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH))/overlay
 
 PRODUCT_COPY_FILES += \
