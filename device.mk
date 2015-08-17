@@ -27,6 +27,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/etc/init.qti.carrier.rc:root/init.qti.carrier.rc \
     $(LOCAL_PATH)/recovery/etc/init.target.rc:root/init.target.rc
 
+# Keylayout
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
+    $(LOCAL_PATH)/keylayout/synaptics_rmi4_i2c.kl:system/usr/keylayout/synaptics_rmi4_i2c.kl
+
 # Off-mode charging
 PRODUCT_PACKAGES += \
     charge \
