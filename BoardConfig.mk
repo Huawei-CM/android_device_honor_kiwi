@@ -45,9 +45,11 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 TARGET_POWERHAL_VARIANT := qcom 
 
 # Kernel Stuff
+BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg.mk
 BOARD_KERNEL_CMDLINE := androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_PAGESIZE := 2048
+BOARD_KERNEL_SEPERATED_DT := true
 TARGET_KERNEL_CONFIG := cm_alel04_defconfig
 TARGET_KERNEL_SOURCE := kernel/huawei/msm8610
 
