@@ -55,7 +55,9 @@ USE_OPENGL_RENDERER := true
 
 # Kernel Stuff
 BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg.mk
-BOARD_KERNEL_CMDLINE := androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci
+BOARD_KERNEL_CMDLINE := androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=31 
+BOARD_KERNEL_CMDLINE += msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPERATED_DT := true
@@ -72,8 +74,13 @@ BOARD_PERSISTIMAGE_PARTITION_SIZE := 8388608
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 12803095552
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BASE_KERNEL_PAGESIZE * 64)
 
+# Recovery
 BOARD_HAS_NO_SELECT_BUTTON := true
 
+# SELinux
+# -include device/qcom/sepolicy.mk
+# BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy
+# BOARD_SEPOLICY_UNION += \
 
 # Vold
 BOARD_VOLD_MAX_PARTITIONS := 25
