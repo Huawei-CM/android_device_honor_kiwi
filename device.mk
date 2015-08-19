@@ -28,6 +28,7 @@ TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 720
 
 # Audio
+PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio.primary.msm8610 \
     audio.r_submix.default \
