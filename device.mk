@@ -27,6 +27,10 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 720
 
+# Recovery
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/twrp.fstab:recovery/root/etc/twrp.fstab
+
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
@@ -81,9 +85,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/kernel:kernel \
     $(LOCAL_PATH)/recovery/etc/fstab.qcom:recovery/root/fstab.qcom \
     $(LOCAL_PATH)/recovery/etc/init.recovery.qcom.rc:root/init.recovery.qcom.rc \
-    $(LOCAL_PATH)/recovery/etc/init.qti.carrier.rc:root/init.qti.carrier.rc \
-    $(LOCAL_PATH)/recovery/etc/init.target.rc:root/init.target.rc
-
+    $(LOCAL_PATH)/rootdir/etc/init.target.rc:root/init.target.rc \
+    $(LOCAL_PATH)/rootdir/etc/fstab.qcom:recovery/root/etc/fstab \
+    $(LOCAL_PATH)/rootdir/etc/adb_keys:recovery/root/adb_keys \
+    $(LOCAL_PATH)/dt.img:dt.img
+    
 # Graphics
 PRODUCT_PACKAGES += \
 	copybit.msm8916 \

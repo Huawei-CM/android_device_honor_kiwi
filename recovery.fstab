@@ -1,10 +1,11 @@
 # mount point	fstype    device    	[device2]
 
-/boot       ext4        /dev/block/mmcblk0p19
-/cache      ext4        /dev/block/bootdevice/by-name/cache
-/data       ext4        /dev/block/bootdevice/by-name/userdata
-/misc       ext4        /dev/block/mmcblk0p10
-/recovery   ext4        /dev/block/mmcblk0p20
+/boot       ext4/dev/block/platform/soc.0/by-name/boot
+/cache      ext4        /dev/block/platform/soc.0/by-name/cache
+/data       ext4        /dev/block/platform/soc.0/by-name/userdata
+/misc       ext4        /dev/block/platform/soc.0/by-name/misc
+/recovery   ext4        /dev/block/platform/soc.0/by-name/recovery
 /sdcard     vfat        /devices/soc.0/7864900.sdhci/mmc_host
-/system     ext4        /dev/block/mmcblk0p19
-/persist    ext4        /dev/block/mmcblk0p18
+/system     ext4        /dev/block/platform/soc.0/by-name/system
+/persist    ext4        /dev/block/platform/soc.0/by-name/persist
+/modem      ext4        /dev/block/platform/soc.0/by-name/modem

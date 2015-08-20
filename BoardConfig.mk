@@ -63,7 +63,7 @@ BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPERATED_DT := true
 TARGET_KERNEL_CONFIG := cm_alel04_defconfig
-TARGET_KERNEL_SOURCE := kernel/huawei/msm8916
+TARGET_KERNEL_SOURCE := kernel/cyanogenmod/msm8916
 
 # Partition Sizes
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -78,11 +78,12 @@ BOARD_FLASH_BLOCK_SIZE := 131072 # (BASE_KERNEL_PAGESIZE * 64)
 # Recovery
 BOARD_HAS_NO_SELECT_BUTTON := true
 DEVICE_RESOLUTION := 720x1280
-TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
-RECOVERY_GRAPHICS_USE_LINELENGTH := true
+TARGET_RECOVERY_PIXEL_FORMAT := BGRA_8888
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TW_INCLUDE_CRYPTO := true
 TW_THEME := portrait_hdpi
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/twrp.fstab
+TW_TARGET_USES_QCOM_BSP := true
 
 # SELinux
 # -include device/qcom/sepolicy.mk
@@ -90,7 +91,6 @@ TW_THEME := portrait_hdpi
 # BOARD_SEPOLICY_UNION += \
 
 # Vold
-BOARD_VOLD_MAX_PARTITIONS := 25
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
 
 # Wifi
