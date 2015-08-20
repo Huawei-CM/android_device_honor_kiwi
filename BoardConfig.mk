@@ -84,6 +84,7 @@ TW_INCLUDE_CRYPTO := true
 TW_THEME := portrait_hdpi
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/twrp.fstab
 TW_TARGET_USES_QCOM_BSP := true
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
 
 # SELinux
 # -include device/qcom/sepolicy.mk
