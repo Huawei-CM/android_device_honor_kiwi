@@ -49,10 +49,10 @@ function extract() {
     done
 }
 
-DEVICE_BASE=../../../vendor/$VENDOR/$DEVICE/proprietary
+DEVICE_BASE=../problobs/vendor/$VENDOR/$DEVICE/proprietary
 rm -rf $DEVICE_BASE/*
 
 # Extract the device specific files
-extract device-proprietary-files.txt $DEVICE_BASE
+extract proprietary-files.txt $DEVICE_BASE
 
 ./setup-makefiles.sh
