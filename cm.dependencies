@@ -1,7 +1,7 @@
 [
   {
-    "repository": "android_kernel_huawei_msm8226",
-    "target_path": "kernel/huawei/msm8226"
+    "repository": "android_kernel_huawei_msm8916",
+    "target_path": "kernel/huawei/msm8916"
   }, {
     "repository": "android_device_qcom_sepolicy",
     "target_path": "device/qcom/sepolicy"

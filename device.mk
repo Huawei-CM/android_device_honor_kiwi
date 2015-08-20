@@ -30,10 +30,10 @@ TARGET_SCREEN_WIDTH := 720
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
-    audio.primary.msm8610 \
+    audio.primary.msm8916 \
     audio.r_submix.default \
     audio.usb.default \
-    audio_policy.msm8610 \
+    audio_policy.msm8916 \
     audiod \
     tinymix
 
@@ -86,11 +86,11 @@ PRODUCT_COPY_FILES += \
 
 # Graphics
 PRODUCT_PACKAGES += \
-	copybit.msm8610 \
-	gralloc.msm8610 \
-	hwcomposer.msm8610 \
+	copybit.msm8916 \
+	gralloc.msm8916 \
+	hwcomposer.msm8916 \
 	libtinyxml \
-	memtrack.msm8610
+	memtrack.msm8916
 
 # Keylayout
 PRODUCT_COPY_FILES += \
@@ -99,15 +99,15 @@ PRODUCT_COPY_FILES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    lights.msm8610
+    lights.msm8916
 
 # Keystore
 PRODUCT_PACKAGES += \
-    keystore.msm8610
+    keystore.msm8916
 
 # Location
 PRODUCT_PACKAGES += \
-    gps.msm8610
+    gps.msm8916
 
 # OMX
 PRODUCT_PACKAGES += \
@@ -128,7 +128,7 @@ PRODUCT_BOOT_JARS += \
 
 # Power
 PRODUCT_PACKAGES += \
-    power.msm8610
+    power.msm8916
 
 # Radio
 PRODUCT_BOOT_JARS += \
@@ -168,9 +168,9 @@ PRODUCT_PACKAGES += \
 
 # Wifi firmware
 PRODUCT_COPY_FILES += \
-    kernel/huawei/msm8226/drivers/staging/prima/firmware_bin/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
-    kernel/huawei/msm8226/drivers/staging/prima/firmware_bin/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
-    kernel/huawei/msm8226/drivers/staging/prima/firmware_bin/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
+    kernel/huawei/msm8916/drivers/staging/prima/firmware_bin/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
+    kernel/huawei/msm8916/drivers/staging/prima/firmware_bin/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
+    kernel/huawei/msm8916/drivers/staging/prima/firmware_bin/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 
 $(call inherit-product-if-exists, vendor/huawei/alel04/alel04-vendor.mk)
 
