@@ -61,7 +61,7 @@ BOARD_KERNEL_CMDLINE += msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevi
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_KERNEL_SEPERATED_DT := true
+BOARD_KERNEL_SEPARATED_DT := true
 TARGET_KERNEL_CONFIG := cm_alel04_defconfig
 TARGET_KERNEL_SOURCE := kernel/cyanogen/msm8916
 
