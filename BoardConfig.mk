@@ -57,8 +57,9 @@ USE_OPENGL_RENDERER := true
 # Kernel Stuff
 BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg.mk
 BOARD_KERNEL_CMDLINE := androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=31 
-BOARD_KERNEL_CMDLINE += msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci
+BOARD_KERNEL_CMDLINE += msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE += earlyprintk lpm_levels.sleep_disabled=1
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
@@ -78,7 +79,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072 # (BASE_KERNEL_PAGESIZE * 64)
 # Recovery
 BOARD_HAS_NO_SELECT_BUTTON := true
 DEVICE_RESOLUTION := 720x1280
-TARGET_RECOVERY_PIXEL_FORMAT := BGRA_8888
+TARGET_RECOVERY_PIXEL_FORMAT := AGBR_8888
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TW_INCLUDE_CRYPTO := true
 TW_THEME := portrait_hdpi
