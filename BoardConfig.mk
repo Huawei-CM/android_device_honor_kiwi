@@ -17,12 +17,22 @@ LOCAL_PATH := device/huawei/alel04
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
 # Architecture
-TARGET_ARCH := arm
-TARGET_ARCH_VARIANT := armv7-a-neon
-TARGET_CPU_ABI := armeabi-v7a
-TARGET_CPU_ABI2 := armeabi
-TARGET_CPU_VARIANT := cortex-a53
-TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
+TARGET_ARCH := arm64
+TARGET_ARCH_VARIANT := armv8-a
+TARGET_CPU_ABI := arm64-v8a
+TARGET_CPU_ABI2 :=
+TARGET_CPU_VARIANT := generic
+
+TARGET_2ND_ARCH := arm
+TARGET_2ND_ARCH_VARIANT := armv7-a-neon
+TARGET_2ND_CPU_ABI := armeabi-v7a
+TARGET_2ND_CPU_ABI2 := armeabi
+TARGET_2ND_CPU_VARIANT := cortex-a53
+
+TARGET_BOARD_SUFFIX := _64
+TARGET_USES_64_BIT_BINDER := true
+TARGET_BOARD_PLATFORM := msm8916
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno405
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
@@ -30,9 +40,7 @@ BOARD_USES_ALSA_AUDIO := true
 # Bootloader
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
-TARGET_BOARD_PLATFORM := msm8916
-TARGET_BOARD_PLATFORM_GPU := qcom-adreno405
-TARGET_BOOTLOADER_BOARD_NAME := alel04
+TARGET_BOOTLOADER_BOARD_NAME := MSM8916
 BOARD_USES_QCOM_HARDWARE := true
 COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE
 
@@ -41,6 +49,9 @@ BLUETOOTH_HCI_USE_MCT := true
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
+
+# CPU
+TARGET_CPU_CORTEX_A53 := true
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
@@ -54,16 +65,22 @@ TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_ION := true
 USE_OPENGL_RENDERER := true
 
-# Kernel Stuff
+# Kernel
 BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg.mk
-BOARD_KERNEL_CMDLINE := androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=31 
-BOARD_KERNEL_CMDLINE += msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci
+BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3
+BOARD_KERNEL_CMDLINE += androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlyprintk
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
-BOARD_KERNEL_CMDLINE += earlyprintk lpm_levels.sleep_disabled=1
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
-TARGET_KERNEL_CONFIG := cm_alel04_defconfig
+BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100
+#BOARD_KERNEL_TAGS_OFFSET := 0x00000100
+#BOARD_RAMDISK_OFFSET := 0x01000000
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+TARGET_KERNEL_HEADER_ARCH := arm64
+TARGET_USES_UNCOMPRESSED_KERNEL := true
+# TARGET_PREBUILT_KERNEL := device/huawei/alel04/prebuilts/kernel
+TARGET_KERNEL_CONFIG := cm_alel04-64_defconfig
 TARGET_KERNEL_SOURCE := kernel/cyanogen/msm8916
 
 # Partition Sizes
@@ -79,7 +96,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072 # (BASE_KERNEL_PAGESIZE * 64)
 # Recovery
 BOARD_HAS_NO_SELECT_BUTTON := true
 DEVICE_RESOLUTION := 720x1280
-TARGET_RECOVERY_PIXEL_FORMAT := AGBR_8888
+TARGET_RECOVERY_PIXEL_FORMAT := ABGR_8888
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TW_INCLUDE_CRYPTO := true
 TW_THEME := portrait_hdpi
