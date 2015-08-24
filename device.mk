@@ -82,13 +82,10 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/kernel:kernel \
     $(LOCAL_PATH)/recovery/etc/fstab.qcom:recovery/root/fstab.qcom \
     $(LOCAL_PATH)/recovery/etc/init.recovery.qcom.rc:root/init.recovery.qcom.rc \
-    $(LOCAL_PATH)/rootdir/etc/init.target.rc:root/init.target.rc \
-    $(LOCAL_PATH)/rootdir/etc/fstab.qcom:recovery/root/etc/fstab \
     $(LOCAL_PATH)/rootdir/etc/adb_keys:recovery/root/adb_keys \
-    $(LOCAL_PATH)/dt.img:dt.img
+    $(LOCAL_PATH)/rootdir/etc/init.target.rc:root/init.target.rc
     
 # Graphics
 PRODUCT_PACKAGES += \
