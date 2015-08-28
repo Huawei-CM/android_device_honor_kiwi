@@ -81,12 +81,38 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
 
+# Init Scripts
+PRODUCT_PACKAGES += \
+	fstab.qcom \
+	init.class_main.sh \
+	init.mdm.sh \
+	init.qcom.audio.sh \
+	init.qcom.bt.sh \
+        init.qcom.class_core.sh \
+        init.qcom.coex.sh \
+        init.qcom.debug.sh \
+        init.qcom.early_boot.sh \
+        init.qcom.efs.sync.sh \
+        init.qcom.factory.sh \
+        init.qcom.fm.sh \
+        init.qcom.post_boot.sh \
+        init.qcom.sdio.sh \
+        init.qcom.sh \
+        init.qcom.ssr.sh \
+        init.qcom.syspart_fixup.sh \
+        init.qcom.uicc.sh \
+        init.qcom.usb.sh \
+        init.qcom.wifi.sh \
+        init.qcom.zram.sh \
+        init.qcom.rc \
+        init.qcom.usb.rc \
+        init.usb.rc \
+        ueventd.qcom.rc
+
+# Recovery config files
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/recovery/etc/fstab.qcom:recovery/root/fstab.qcom \
-    $(LOCAL_PATH)/recovery/etc/init.recovery.qcom.rc:root/init.recovery.qcom.rc \
-    $(LOCAL_PATH)/rootdir/etc/adb_keys:recovery/root/adb_keys \
-    $(LOCAL_PATH)/rootdir/etc/init.target.rc:root/init.target.rc
-    
+    $(LOCAL_PATH)/recovery/etc/init.recovery.qcom.rc:root/init.recovery.qcom.rc
+
 # Graphics
 PRODUCT_PACKAGES += \
 	copybit.msm8916 \
