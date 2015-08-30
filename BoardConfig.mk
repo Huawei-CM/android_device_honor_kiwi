@@ -53,12 +53,6 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 # CPU
 TARGET_CPU_CORTEX_A53 := true
 
-# Lights
-TARGET_PROVIDES_LIBLIGHT := true
-
-# Power
-TARGET_POWERHAL_VARIANT := qcom 
-
 # Graphics
 TARGET_CONTINUOUS_SPLASH_ENABLED := true
 TARGET_USES_C2D_COMPOSITION := true
@@ -80,6 +74,9 @@ TARGET_USES_UNCOMPRESSED_KERNEL := true
 TARGET_KERNEL_CONFIG := cm_alel04-64_defconfig
 TARGET_KERNEL_SOURCE := kernel/huawei/msm8916
 
+# Lights
+TARGET_PROVIDES_LIBLIGHT := true
+
 # Partition Sizes
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
@@ -90,23 +87,30 @@ BOARD_PERSISTIMAGE_PARTITION_SIZE := 8388608
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 12803095552
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BASE_KERNEL_PAGESIZE * 64)
 
+# Power
+TARGET_POWERHAL_VARIANT := qcom 
+
 # Recovery
-RECOVERY_VARIANT := twrp
 BOARD_HAS_NO_SELECT_BUTTON := true
-DEVICE_RESOLUTION := 720x1280
-TARGET_RECOVERY_PIXEL_FORMAT := ABGR_8888
-TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
-TW_INCLUDE_CRYPTO := true
-TW_THEME := portrait_hdpi
-TARGET_RECOVERY_FSTAB = device/huawei/alel04/rootdir/etc/fstab.qcom
-TW_TARGET_USES_QCOM_BSP := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
-TW_NEW_ION_HEAP := true
+TARGET_RECOVERY_PIXEL_FORMAT := ABGR_8888
+TARGET_RECOVERY_FSTAB = device/huawei/alel04/rootdir/etc/fstab.qcom
 
 # SELinux
 # -include device/qcom/sepolicy.mk
 # BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy
 # BOARD_SEPOLICY_UNION += \
+
+# TWRP
+#   Uncomment the lines below only when building TWRP.
+#   Do not leave SELinux permissive when building CM or Cyanogen Recovery.
+#RECOVERY_VARIANT := twrp
+#DEVICE_RESOLUTION := 720x1280
+#TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
+#TW_INCLUDE_CRYPTO := true
+#TW_THEME := portrait_hdpi
+#TW_TARGET_USES_QCOM_BSP := true
+#TW_NEW_ION_HEAP := true
 
 # Vold
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
