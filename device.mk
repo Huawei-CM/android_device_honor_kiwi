@@ -88,26 +88,26 @@ PRODUCT_PACKAGES += \
 	init.mdm.sh \
 	init.qcom.audio.sh \
 	init.qcom.bt.sh \
-        init.qcom.class_core.sh \
-        init.qcom.coex.sh \
-        init.qcom.debug.sh \
-        init.qcom.early_boot.sh \
-        init.qcom.efs.sync.sh \
-        init.qcom.factory.sh \
-        init.qcom.fm.sh \
-        init.qcom.post_boot.sh \
-        init.qcom.sdio.sh \
-        init.qcom.sh \
-        init.qcom.ssr.sh \
-        init.qcom.syspart_fixup.sh \
-        init.qcom.uicc.sh \
-        init.qcom.usb.sh \
-        init.qcom.wifi.sh \
-        init.qcom.zram.sh \
-        init.qcom.rc \
-        init.qcom.usb.rc \
-        init.usb.rc \
-        ueventd.qcom.rc
+	init.qcom.class_core.sh \
+	init.qcom.coex.sh \
+	init.qcom.debug.sh \
+	init.qcom.early_boot.sh \
+	init.qcom.efs.sync.sh \
+	init.qcom.factory.sh \
+	init.qcom.fm.sh \
+	init.qcom.post_boot.sh \
+	init.qcom.sdio.sh \
+	init.qcom.sh \
+	init.qcom.ssr.sh \
+	init.qcom.syspart_fixup.sh \
+	init.qcom.uicc.sh \
+	init.qcom.usb.sh \
+	init.qcom.wifi.sh \
+	init.qcom.zram.sh \
+	init.qcom.rc \
+	init.qcom.usb.rc \
+	init.usb.rc \
+	ueventd.qcom.rc
 
 # Recovery config files
 PRODUCT_COPY_FILES += \
@@ -189,17 +189,6 @@ PRODUCT_PACKAGES += \
     libwpa_client \
     wcnss_service \
     wpa_supplicant
-
-# Wifi firmware symlinks
-PRODUCT_PACKAGES += \
-    WCNSS_qcom_wlan_nv.bin \
-    WCNSS_qcom_cfg.ini
-
-# Wifi firmware
-PRODUCT_COPY_FILES += \
-    kernel/huawei/msm8916/drivers/staging/prima/firmware_bin/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
-    kernel/huawei/msm8916/drivers/staging/prima/firmware_bin/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
-    kernel/huawei/msm8916/drivers/staging/prima/firmware_bin/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 
 $(call inherit-product-if-exists, vendor/huawei/alel04/alel04-vendor.mk)
 

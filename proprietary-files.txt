@@ -138,3 +138,9 @@ vendor/lib/libtime_genoff.so
 
 # Listen service
 vendor/lib/liblistensoundmodel.so
+
+# Wifi
+etc/firmware/wlan/prima/WCNSS_cfg.dat
+etc/firmware/wlan/prima/WCNSS_hw_wlan_nv.bin
+etc/firmware/wlan/prima/WCNSS_hw_wlan_nv_ALE-L04.bin
+etc/wifi/WCNSS_qcom_cfg.ini
