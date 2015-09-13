@@ -1,0 +1,1 @@
+require version-bootloader=MSM8916C00B309_BOOT
