@@ -53,6 +53,10 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 # CPU
 TARGET_CPU_CORTEX_A53 := true
 
+# FM
+AUDIO_FEATURE_ENABLED_FM := true
+TARGET_QCOM_NO_FM_FIRMWARE := true
+
 # Graphics
 TARGET_CONTINUOUS_SPLASH_ENABLED := true
 TARGET_USES_C2D_COMPOSITION := true
@@ -106,6 +110,7 @@ TARGET_RECOVERY_FSTAB = device/huawei/alel04/rootdir/etc/fstab.qcom
 #   Do not leave SELinux permissive when building CM or Cyanogen Recovery.
 #RECOVERY_VARIANT := twrp
 #DEVICE_RESOLUTION := 720x1280
+#TARGET_RECOVERY_DEVICE_MODULES += keystore.qcom.so
 #TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 #TW_INCLUDE_CRYPTO := true
 #TW_THEME := portrait_hdpi
