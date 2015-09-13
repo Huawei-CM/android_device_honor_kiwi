@@ -1,4 +1,3 @@
-
 # Copyright (C) 2015 The CyanogenMod Project
 # Copyright 2006 The Android Open Source Project
 #
