@@ -122,6 +122,7 @@ TARGET_RIL_VARIANT := caf
 #TW_THEME := portrait_hdpi
 #TW_TARGET_USES_QCOM_BSP := true
 #TW_NEW_ION_HEAP := true
+#TARGET_PREBUILT_KERNEL := device/huawei/alel04/prebuilts/kernel
 
 # Vold
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
