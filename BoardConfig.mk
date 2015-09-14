@@ -101,10 +101,12 @@ TARGET_RECOVERY_PIXEL_FORMAT := ABGR_8888
 TARGET_RECOVERY_FSTAB = device/huawei/alel04/rootdir/fstab.qcom
 
 # RIL
-BOARD_PROVIDES_LIBRIL := true
-COMMON_GLOBAL_CFLAGS += -DUSE_RIL_VERSION_10
-COMMON_GLOBAL_CPPFLAGS += -DUSE_RIL_VERSION_10
-TARGET_RIL_VARIANT := caf
+# libril is left out of the tree for now
+# let's get a booting build before we go breaking stuff again.
+# BOARD_PROVIDES_LIBRIL := true
+# COMMON_GLOBAL_CFLAGS += -DUSE_RIL_VERSION_10
+# COMMON_GLOBAL_CPPFLAGS += -DUSE_RIL_VERSION_10
+# TARGET_RIL_VARIANT := caf
 
 # SELinux
 # -include device/qcom/sepolicy.mk
