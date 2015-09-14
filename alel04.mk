@@ -91,6 +91,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
     $(LOCAL_PATH)/keylayout/synaptics_rmi4_i2c.kl:system/usr/keylayout/synaptics_rmi4_i2c.kl
 
+# Keystore
+PRODUCT_PACKAGES += \
+    keystore.msm8916	
+
 # Lights
 PRODUCT_PACKAGES += \
     lights.msm8916
@@ -98,11 +102,6 @@ PRODUCT_PACKAGES += \
 # Location
 PRODUCT_PACKAGES += \
     gps.msm8916
-
-	
-# Keystore
-PRODUCT_PACKAGES += \
-    keystore.msm8916
 	
 # Media
 PRODUCT_COPY_FILES += \
