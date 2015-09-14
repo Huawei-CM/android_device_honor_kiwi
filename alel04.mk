@@ -102,6 +102,7 @@ PRODUCT_PACKAGES += \
 	init.qcom.zram.sh \
 	init.qcom.rc \
 	init.qcom.usb.rc \
+	init.target.rc \
 	init.usb.rc \
 	ueventd.qcom.rc
 
