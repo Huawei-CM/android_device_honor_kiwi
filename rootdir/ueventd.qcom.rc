@@ -219,5 +219,5 @@
 /dev/ramdump*             0640   system     system
 
 # Add device block for FRP
-/dev/block/bootdevice/by-name/config    0660   system     system
-/dev/block/bootdevice/by-name/pad    0660   system     system
+/dev/block/platform/soc.0/by-name/config    0660   system     system
+/dev/block/platform/soc.0/by-name/pad    0660   system     system
