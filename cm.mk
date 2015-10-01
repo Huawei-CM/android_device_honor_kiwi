@@ -19,7 +19,7 @@ $(call inherit-product, vendor/cm/config/telephony.mk)
 TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 720
 
-$(call inherit-product, device/huawei/mt2/full_alel04.mk)
+$(call inherit-product, device/huawei/alel04/full_alel04.mk)
 
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
