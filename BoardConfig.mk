@@ -67,7 +67,6 @@ USE_OPENGL_RENDERER := true
 BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg.mk
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3
 BOARD_KERNEL_CMDLINE += androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlyprintk
-BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
@@ -75,7 +74,7 @@ BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 -
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_USES_UNCOMPRESSED_KERNEL := true
-TARGET_KERNEL_CONFIG := cm_alel04-64_defconfig
+TARGET_KERNEL_CONFIG := cyanogenmod_alice_defconfig
 TARGET_KERNEL_SOURCE := kernel/huawei/msm8916
 
 # Lights
@@ -116,6 +115,7 @@ TARGET_RECOVERY_FSTAB = device/huawei/alel04/rootdir/fstab.qcom
 # TWRP
 #   Uncomment the lines below only when building TWRP.
 #   Do not leave SELinux permissive when building CM or Cyanogen Recovery.
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 #RECOVERY_VARIANT := twrp
 #DEVICE_RESOLUTION := 720x1280
 #TARGET_RECOVERY_DEVICE_MODULES += keystore.qcom.so
@@ -125,6 +125,9 @@ TARGET_RECOVERY_FSTAB = device/huawei/alel04/rootdir/fstab.qcom
 #TW_TARGET_USES_QCOM_BSP := true
 #TW_NEW_ION_HEAP := true
 #TARGET_PREBUILT_KERNEL := device/huawei/alel04/prebuilts/kernel
+
+# Video
+TARGET_HAVE_SIGNED_VENUS_FW := true
 
 # Vold
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
