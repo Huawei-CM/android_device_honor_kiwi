@@ -18,10 +18,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 LOCAL_PATH := device/huawei/alel04
 
-PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
+PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
-
-$(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -45,9 +43,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf \
     $(LOCAL_PATH)/audio/mixer_paths.xml:system/etc/mixer_paths.xml
 
-# Boot animation
-TARGET_SCREEN_HEIGHT := 1280
-TARGET_SCREEN_WIDTH := 720
+# Camera
+PRODUCT_PACKAGES += \
+	camera.msm8916
 
 # FM
 PRODUCT_PACKAGES += \
@@ -107,7 +105,14 @@ PRODUCT_PACKAGES += \
 
 # Location
 PRODUCT_PACKAGES += \
-    gps.msm8916
+    gps.msm8916 \
+    izat.conf \
+    quipc.conf \
+    sap.conf
+
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf
 	
 # Media
 PRODUCT_COPY_FILES += \
@@ -170,6 +175,10 @@ PRODUCT_PACKAGES += \
 # Radio
 PRODUCT_BOOT_JARS += \
     qcrilhook
+
+# Sensors
+PRODUCT_PACKAGES += \
+    sec_config
 
 # Thermal
 PRODUCT_COPY_FILES += \
