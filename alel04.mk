@@ -49,6 +49,13 @@ PRODUCT_COPY_FILES += \
 TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 720
 
+# FM
+PRODUCT_PACKAGES += \
+    FM2 \
+    FMRecord \
+    libqcomfm_jni \
+    qcom.fmradio
+
 # Init Scripts
 PRODUCT_PACKAGES += \
 	fstab.qcom \
@@ -188,13 +195,7 @@ PRODUCT_PACKAGES += \
 
 $(call inherit-product-if-exists, vendor/huawei/alel04/alel04-vendor.mk)
 
-$(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
-# Discard inherited values and use our own instead.
-PRODUCT_DEVICE := alel04
-PRODUCT_NAME := cm_alel04
-PRODUCT_BRAND := huawei
-PRODUCT_MODEL := ALE-L04
-PRODUCT_MANUFACTURER := Huawei
