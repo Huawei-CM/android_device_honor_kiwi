@@ -208,9 +208,3 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product-if-exists, vendor/huawei/alel04/alel04-vendor.mk)
 
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
-
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    BUILD_UTC_DATE=0 \
-    PRODUCT_NAME=ALEL04 \
-    BUILD_FINGERPRINT="Huawei/ALE-L04/hwALE-Q:5.1/HuaweiALE-L04/C567B309:user/release-keys"" \
-    PRIVATE_BUILD_DESC="ALE-L04-user 5.1 GRJ90 C567B309 release-keys"
