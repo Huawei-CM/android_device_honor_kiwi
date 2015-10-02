@@ -30,5 +30,9 @@ PRODUCT_NAME := full_alel04
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BUILD_UTC_DATE=0 \
     PRODUCT_NAME=ALEL04 \
+<<<<<<< HEAD
     BUILD_FINGERPRINT="Huawei/ALE-L04/hwALE-Q:5.1/HuaweiALE-L04/C567B309:user/release-keys" \
+=======
+    BUILD_FINGERPRINT="Huawei/ALE-L04/hwALE-Q:5.1/HuaweiALE-L04/C567B309:user/release-keys"" \
+>>>>>>> 8233c5349de616f65c871cb2555fd58179e2ad25
     PRIVATE_BUILD_DESC="ALE-L04-user 5.1 GRJ90 C567B309 release-keys"
