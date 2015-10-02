@@ -34,6 +34,9 @@ TARGET_USES_64_BIT_BINDER := true
 TARGET_BOARD_PLATFORM := msm8916
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno405
 
+# Assertions
+TARGET_BOARD_INFO_FILE ?= $(LOCAL_PATH)/board-info.txt
+
 # Audio
 BOARD_USES_ALSA_AUDIO := true
 
@@ -76,7 +79,7 @@ TARGET_USES_ION := true
 USE_OPENGL_RENDERER := true
 
 # Init
-TARGET_INIT_VENDOR_LIB := libinit_msm
+# TARGET_INIT_VENDOR_LIB := libinit_msm
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 
 # Kernel
