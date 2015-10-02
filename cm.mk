@@ -12,9 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-## Specify phone tech before including full_phone
-$(call inherit-product, vendor/cm/config/telephony.mk)
-
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 720
@@ -33,5 +30,5 @@ PRODUCT_NAME := cm_alel04
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=ALEL04 \
-    BUILD_FINGERPRINT="Huawei/ALE-L04/hwALE-Q:5.1/HuaweiALE-L04/C567B309:user/release-keys" \
+    BUILD_FINGERPRINT=Huawei/ALE-L04/hwALE-Q:5.1/HuaweiALE-L04/C567B309:user/release-keys \
     PRIVATE_BUILD_DESC="ALE-L04-user 5.1 GRJ90 C567B309 release-keys"

@@ -41,7 +41,6 @@ BOARD_USES_ALSA_AUDIO := true
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
 TARGET_BOOTLOADER_BOARD_NAME := MSM8916
-BOARD_USES_QCOM_HARDWARE := true
 COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE
 
 # Bluetooth
@@ -53,9 +52,22 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 # CPU
 TARGET_CPU_CORTEX_A53 := true
 
+# Display
+MAX_EGL_CACHE_KEY_SIZE := 12*1024
+MAX_EGL_CACHE_SIZE := 2048*1024
+NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
+OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
+TARGET_CONTINUOUS_SPLASH_ENABLED := true
+TARGET_USES_C2D_COMPOSITION := true
+TARGET_USES_ION := true
+USE_OPENGL_RENDERER := true
+
 # FM
 AUDIO_FEATURE_ENABLED_FM := true
 TARGET_QCOM_NO_FM_FIRMWARE := true
+
+# Fonts
+EXTENDED_FONT_FOOTPRINT := true
 
 # Graphics
 TARGET_CONTINUOUS_SPLASH_ENABLED := true
@@ -63,12 +75,14 @@ TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_ION := true
 USE_OPENGL_RENDERER := true
 
-# Huawei Stuff
+# Init
+TARGET_INIT_VENDOR_LIB := libinit_msm
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 
 # Kernel
 BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg.mk
-BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0
+BOARD_KERNEL_CMDLINE += androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3
 BOARD_KERNEL_CMDLINE += androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlyprintk
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_PAGESIZE := 2048
@@ -83,6 +97,9 @@ TARGET_KERNEL_SOURCE := kernel/huawei/msm8916
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
+# Malloc
+MALLOC_IMPL := dlmalloc
+
 # Partition Sizes
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
@@ -96,6 +113,13 @@ BOARD_FLASH_BLOCK_SIZE := 131072 # (BASE_KERNEL_PAGESIZE * 64)
 # Power
 TARGET_POWERHAL_VARIANT := qcom 
 
+# Qualcomm support
+BOARD_USES_QC_TIME_SERVICES := true
+ifneq ($(QCPATH),)
+BOARD_USES_QCNE := true
+endif
+BOARD_USES_QCOM_HARDWARE := true
+
 # Recovery
 BOARD_HAS_NO_SELECT_BUTTON := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
@@ -103,12 +127,8 @@ TARGET_RECOVERY_PIXEL_FORMAT := ABGR_8888
 TARGET_RECOVERY_FSTAB = device/huawei/alel04/rootdir/fstab.qcom
 
 # RIL
-# libril is left out of the tree for now
-# let's get a booting build before we go breaking stuff again.
-# BOARD_PROVIDES_LIBRIL := true
-# COMMON_GLOBAL_CFLAGS += -DUSE_RIL_VERSION_10
-# COMMON_GLOBAL_CPPFLAGS += -DUSE_RIL_VERSION_10
-# TARGET_RIL_VARIANT := caf
+PROTOBUF_SUPPORTED := true
+TARGET_RIL_VARIANT := caf
 
 # SELinux
 # -include device/qcom/sepolicy.mk
