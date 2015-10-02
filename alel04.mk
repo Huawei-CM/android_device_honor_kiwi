@@ -205,5 +205,5 @@ $(call inherit-product-if-exists, vendor/huawei/alel04/alel04-vendor.mk)
 
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
-PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
+PRODUCT_BUILD_PROP_OVERRIDES := BUILD_UTC_DATE=0
 
