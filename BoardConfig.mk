@@ -36,7 +36,7 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno405
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
-COMMON_GLOBAL_CFLAGS += -DHUAWEI_SOUND_PARAM_PATH=\"/etc/sound_param/mate2\"
+COMMON_GLOBAL_CFLAGS += -DHUAWEI_SOUND_PARAM_PATH=\"/etc/sound_param/Alice\"
 
 # Bootloader
 TARGET_NO_BOOTLOADER := true
