@@ -25,6 +25,10 @@ ro.config.hw_manual_focus=true
 ro.config.hw_photo_beauty=true
 ro.config.hw_video_beauty=true
 
+# GPS
+ro.qc.sdk.izat.premium_enabled=1
+ro.qc.sdk.izat.service_mask=0x0
+
 # RIL
 rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
 rild.libargs=-d /dev/smd0
