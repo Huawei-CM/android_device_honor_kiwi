@@ -24,7 +24,7 @@ TARGET_SCREEN_WIDTH := 720
 $(call inherit-product, device/huawei/alel04/full_alel04.mk)
 
 # Inherit some common CM stuff.
-$(call inherit-product, vendor/carbon/config/common_full_phone.mk)
+$(call inherit-product, vendor/carbon/config/common_phone.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/huawei/alel04/alel04.mk)
