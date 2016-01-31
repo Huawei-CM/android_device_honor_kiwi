@@ -1,4 +1,4 @@
-# Device configuration for Huawei P8 Lite (ALE-L04)
+# Device configuration for Honor 5X (ALE-L04)
 
 ## Spec Sheet
 
@@ -10,17 +10,17 @@
 | Memory                 | 2GB RAM                           |
 | Storage                | 16 GB                             |
 | MicroSD                | Up to 128GB                       |
-| Battery                | 2200 mAh                          |
-| Dimensions             | 143 x 70.6 x 7.7 mm               |
-| Display                | 720 x 1280 pixels, IPS LCD        |
+| Battery                | 3000 mAh                          |
+| Dimensions             | 151.3 x 76.3 x 8.2 mm              |
+| Display                | 1080 x 1920 pixels, IPS LCD        |
 | Camera                 | 13 MP, 4160 x 3120 pixels         |
-| Release Date           | April 2015                        |
+| Release Date           | January 2016                        |
 
 ## Copyright
 
 ```
 #
-# Copyright (C) 2015 The CyanogenMod Project
+# Copyright (C) 2016 The CarbonROM Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.

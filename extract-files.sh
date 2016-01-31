@@ -1,8 +1,8 @@
 #!/bin/bash
 
-export VENDOR=huawei
-export DEVICE_VENDOR=huawei
-export DEVICE=alel04
+export VENDOR=honor
+export DEVICE_VENDOR=honor
+export DEVICE=kiwi
 
 # Check to see if the user passed a folder in to extract from rather than adb pull
 if [ $# -eq 1 ]; then
