@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-LOCAL_PATH := device/huawei/alel04
+LOCAL_PATH := device/honor/kiwi
 
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
@@ -36,7 +36,7 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno405
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
-COMMON_GLOBAL_CFLAGS += -DHUAWEI_SOUND_PARAM_PATH=\"/etc/sound_param/Alice\"
+COMMON_GLOBAL_CFLAGS += -Dhonor_SOUND_PARAM_PATH=\"/etc/sound_param/Alice\"
 
 # Bootloader
 TARGET_NO_BOOTLOADER := true
@@ -87,8 +87,8 @@ BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 -
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_USES_UNCOMPRESSED_KERNEL := true
-TARGET_KERNEL_CONFIG := cyanogenmod_alice_defconfig
-TARGET_KERNEL_SOURCE := kernel/huawei/msm8916
+TARGET_KERNEL_CONFIG := cyanogenmod_kiwi_defconfig
+TARGET_KERNEL_SOURCE := kernel/honor/msm8916
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
@@ -120,7 +120,7 @@ BOARD_USES_QCOM_HARDWARE := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
-TARGET_RECOVERY_FSTAB = device/huawei/alel04/rootdir/fstab.qcom
+TARGET_RECOVERY_FSTAB = device/honor/kiwi/rootdir/fstab.qcom
 
 # RIL
 PROTOBUF_SUPPORTED := true
@@ -145,7 +145,7 @@ BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 #TW_THEME := portrait_hdpi
 #TW_TARGET_USES_QCOM_BSP := true
 #TW_NEW_ION_HEAP := true
-#TARGET_PREBUILT_KERNEL := device/huawei/alel04/prebuilts/kernel
+#TARGET_PREBUILT_KERNEL := device/honor/kiwi/prebuilts/kernel
 
 # Video
 TARGET_HAVE_SIGNED_VENUS_FW := true
@@ -166,4 +166,4 @@ WIFI_DRIVER_FW_PATH_STA := "sta"
 WIFI_DRIVER_FW_PATH_AP := "ap"
 
 # inherit from the proprietary version
--include vendor/huawei/alel04/BoardConfigVendor.mk
+-include vendor/honor/kiwi/BoardConfigVendor.mk
