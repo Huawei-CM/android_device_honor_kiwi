@@ -137,15 +137,15 @@ TARGET_RIL_VARIANT := caf
 #   Uncomment the lines below only when building TWRP.
 #   Do not leave SELinux permissive when building CM or Cyanogen Recovery.
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
-#RECOVERY_VARIANT := twrp
-#DEVICE_RESOLUTION := 720x1280
+RECOVERY_VARIANT := twrp
+DEVICE_RESOLUTION := 1080x1920
 #TARGET_RECOVERY_DEVICE_MODULES += keystore.qcom.so
-#TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
-#TW_INCLUDE_CRYPTO := true
-#TW_THEME := portrait_hdpi
-#TW_TARGET_USES_QCOM_BSP := true
-#TW_NEW_ION_HEAP := true
-#TARGET_PREBUILT_KERNEL := device/honor/kiwi/prebuilts/kernel
+TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
+TW_INCLUDE_CRYPTO := true
+TW_THEME := portrait_hdpi
+TW_TARGET_USES_QCOM_BSP := true
+TW_NEW_ION_HEAP := true
+TARGET_PREBUILT_KERNEL := device/honor/kiwi/prebuilts/kernel
 
 # Video
 TARGET_HAVE_SIGNED_VENUS_FW := true
