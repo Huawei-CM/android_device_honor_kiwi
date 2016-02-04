@@ -24,7 +24,7 @@ TARGET_SCREEN_WIDTH := 1080
 $(call inherit-product, device/honor/kiwi/full_kiwi.mk)
 
 # Inherit some common Carbon stuff.
-$(call inherit-product, vendor/carbon/config/common_phone.mk)
+$(call inherit-product, vendor/cm/config/common_phone.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/honor/kiwi/kiwi.mk)
@@ -35,5 +35,5 @@ PRODUCT_NAME := carbon_kiwi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=kiwi \
-    BUILD_FINGERPRINT=honor/ALE-L04/hwALE-Q:5.1/honorALE-L04/C567B309:user/release-keys \
-    PRIVATE_BUILD_DESC="ALE-L04-user 5.1 GRJ90 C567B309 release-keys"
+    BUILD_FINGERPRINT=HONOR/KIW-L24/HNKIW-Q:5.1.1/HONORKIW-L24/C567B006:user/release-keys \
+    PRIVATE_BUILD_DESC=KIW-L24-user 5.1.1 GRJ90 C567B006 release-keys

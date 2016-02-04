@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ifeq ($(TARGET_DEVICE),alel04)
+ifeq ($(TARGET_DEVICE),kiwi)
 
 LOCAL_PATH := $(call my-dir)
 
@@ -23,7 +23,7 @@ $(TWRP_VENDOR_LIBS): $(LOCAL_INSTALLED_MODULE)
 	@echo "Decryption library for TWRP: $@"
 	@mkdir -p $(dir $(TARGET_RECOVERY_ROOT_OUT)/vendor/lib64/$@)
 	@rm -rf $(TARGET_RECOVERY_ROOT_OUT)/vendor/lib64/$@
-	$(hide) cp vendor/huawei/alel04/proprietary/vendor/lib64/$(notdir $@) $(TARGET_RECOVERY_ROOT_OUT)/vendor/lib64/$@
+	$(hide) cp vendor/honor/kiwi/proprietary/vendor/lib64/$(notdir $@) $(TARGET_RECOVERY_ROOT_OUT)/vendor/lib64/$@
 
 endif
 

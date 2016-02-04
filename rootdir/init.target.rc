@@ -41,16 +41,16 @@ on fs
     # these partition flashed on the device. Failure to mount any partition in fstab file
     # results in failure to launch late-start class.
 
-    #wait /dev/block/platform/soc.0/by-name/cache
-    #mount ext4 /dev/block/platform/soc.0/by-name/cache /cache nosuid nodev barrier=1
+    #wait /dev/block/bootdevice/by-name/cache
+    #mount ext4 /dev/block/bootdevice/by-name/cache /cache nosuid nodev barrier=1
 
-    #wait /dev/block/platform/soc.0/by-name/persist
-    #mount ext4 /dev/block/platform/soc.0/by-name/persist /persist nosuid nodev barrier=1
+    #wait /dev/block/bootdevice/by-name/persist
+    #mount ext4 /dev/block/bootdevice/by-name/persist /persist nosuid nodev barrier=1
     mkdir /persist/data 0700 system system
     restorecon_recursive /persist
 
-    wait /dev/block/platform/soc.0/by-name/modem
-    mount vfat /dev/block/platform/soc.0/by-name/modem /firmware ro context=u:object_r:firmware_file:s0,shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337
+    wait /dev/block/bootdevice/by-name/modem
+    mount vfat /dev/block/bootdevice/by-name/modem /firmware ro context=u:object_r:firmware_file:s0,shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337
     write /sys/kernel/boot_adsp/boot 1
     
     service ota_detect /sbin/ota_sudden_poweroff_detect
@@ -217,16 +217,16 @@ on property:init.svc.surfaceflinger=running
 
 
 on charger-fs
-    mount ext4 /dev/block/platform/soc.0/by-name/userdata /data rw
+    mount ext4 /dev/block/bootdevice/by-name/userdata /data rw
     mkdir /dev/usb-ffs 0770 shell shell
     mkdir /dev/usb-ffs/adb 0770 shell shell
     mount functionfs adb /dev/usb-ffs/adb uid=2000,gid=2000
     write /sys/class/android_usb/android0/f_ffs/aliases adb
-    mount vfat /dev/block/platform/soc.0/by-name/log /log uid=1000,gid=1007
+    mount vfat /dev/block/bootdevice/by-name/log /log uid=1000,gid=1007
 
 on charger
-    wait /dev/block/platform/soc.0/by-name/system
-    mount ext4 /dev/block/platform/soc.0/by-name/system /system ro barrier=1
+    wait /dev/block/bootdevice/by-name/system
+    mount ext4 /dev/block/bootdevice/by-name/system /system ro barrier=1
     chown root system /sys/class/power_supply/bms/current_now
     chown root system /sys/class/power_supply/bms/voltage_ocv
     chmod 0664 /sys/class/power_supply/bms/current_now
